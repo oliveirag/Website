@@ -1,4 +1,3 @@
-# [notgui.com](https://notgui.com)
+# Website
 
-GitHub repository for my personal website.
-
+GitHub repository for my personal website
