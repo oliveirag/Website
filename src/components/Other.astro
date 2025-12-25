@@ -1,0 +1,113 @@
+---
+// Your Top 5 Lists - Update these with your favorites!
+// Add images to /public/images/ folder and reference them here
+const topMovies = [
+  { title: "The Prestige", image: "/images/theprestige.jpg" },
+  { title: "Interstellar", image: "/images/interstellar.jpg" },
+  { title: "Fight Club", image: "/images/fightclub.jpg" },
+  { title: "Shutter Island", image: "/images/shutterisland.jpg" },
+  { title: "Shawshank Redemption", image: "/images/shawshankredemption.jpg" }
+];
+
+const topAnime = [
+  { title: "Vinland Saga", image: "/images/vinlandsaga.jpg" },
+  { title: "Attack on Titan", image: "/images/attackontitan.jpg" },
+  { title: "Hunter x Hunter", image: "/images/hunterxhunter.jpg" },
+  { title: "Solo Leveling", image: "/images/sololeveling.jpg" },
+  { title: "Chainsaw Man", image: "/images/chainsawman.jpg" }
+];
+
+const topVideoGames = [
+  { title: "CSGO", image: "/images/csgo.jpeg" },
+  { title: "Ghost of Tsushima", image: "/images/ghostoftsushima.jpg" },
+  { title: "Red Dead Redemption 2", image: "/images/reddeadredemption2.jpg" },
+  { title: "The Last Of Us Part 1", image: "/images/thelastofuspt1.jpg" },
+  { title: "Valorant", image: "/images/valorant.jpg" }
+];
+---
+
+<section class="flex flex-col gap-6">
+    <div class="flex flex-col">
+        <span class="text-lg font-bold">top 5</span>
+        <span class="text-sm text-zinc-400">my favorite media (updated dec 2025) </span>
+    </div>
+
+    <!-- Movies -->
+    <div id="movies" class="py-2">
+        <div class="flex items-center justify-center mb-4">
+            <span class="font-bold text-sm">movies</span>
+        </div>
+        <div class="flex gap-3 overflow-x-auto pb-2 justify-center">
+            {topMovies.map((movie, index) => (
+                <div class="flex flex-col items-center gap-2 min-w-[100px]">
+                    <div class="relative">
+                        <span class="absolute -top-2 -left-2 bg-zinc-600 text-white text-xs font-semibold rounded-full w-6 h-6 flex items-center justify-center z-10">
+                            {index + 1}
+                        </span>
+                        <img 
+                            src={movie.image} 
+                            alt={movie.title}
+                            class="w-24 h-36 object-cover rounded border-2 border-zinc-600"
+                        />
+                    </div>
+                    <div class="flex flex-col items-center text-center">
+                        <span class="font-semibold text-xs line-clamp-2 w-24">{movie.title}</span>
+                    </div>
+                </div>
+            ))}
+        </div>
+    </div>
+
+    <!-- Anime -->
+    <div id="anime" class="py-2">
+        <div class="flex items-center justify-center mb-4">
+            <span class="font-bold text-sm">anime</span>
+        </div>
+        <div class="flex gap-3 overflow-x-auto pb-2 justify-center">
+            {topAnime.map((anime, index) => (
+                <div class="flex flex-col items-center gap-2 min-w-[100px]">
+                    <div class="relative">
+                        <span class="absolute -top-2 -left-2 bg-zinc-600 text-white text-xs font-semibold rounded-full w-6 h-6 flex items-center justify-center z-10">
+                            {index + 1}
+                        </span>
+                        <img 
+                            src={anime.image} 
+                            alt={anime.title}
+                            class="w-24 h-36 object-cover rounded border-2 border-zinc-600"
+                        />
+                    </div>
+                    <div class="flex flex-col items-center text-center">
+                        <span class="font-semibold text-xs line-clamp-2 w-24">{anime.title}</span>
+                    </div>
+                </div>
+            ))}
+        </div>
+    </div>
+
+    <!-- Video Games -->
+    <div id="video-games" class="py-2">
+        <div class="flex items-center justify-center mb-4">
+            <span class="font-bold text-sm">video games</span>
+        </div>
+        <div class="flex gap-3 overflow-x-auto pb-2 justify-center">
+            {topVideoGames.map((game, index) => (
+                <div class="flex flex-col items-center gap-2 min-w-[100px]">
+                    <div class="relative">
+                        <span class="absolute -top-2 -left-2 bg-zinc-600 text-white text-xs font-semibold rounded-full w-6 h-6 flex items-center justify-center z-10">
+                            {index + 1}
+                        </span>
+                        <img 
+                            src={game.image} 
+                            alt={game.title}
+                            class="w-24 h-36 object-cover rounded border-2 border-zinc-600"
+                        />
+                    </div>
+                    <div class="flex flex-col items-center text-center">
+                        <span class="font-semibold text-xs line-clamp-2 w-24">{game.title}</span>
+                    </div>
+                </div>
+            ))}
+        </div>
+    </div>
+</section>
+

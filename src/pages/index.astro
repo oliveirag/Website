@@ -1,0 +1,333 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Spotify from '../components/Spotify.astro';
+import Project from '../components/Project.astro';
+import SecondaryProject from '../components/SecondaryProject.astro';
+import ChatBot from '../components/ChatBot.jsx';
+import Other from '../components/Other.astro';
+import '../styles/hover.css';
+
+const mainProjects = [
+  {
+    title: "New Project (WIP)",
+    languages: "TBA",
+    description: "Stay tuned",
+    url: "https://www.google.com/404",
+    github: "https://www.google.com/404",
+    image: "/images/placeholder.png"
+  },
+  {
+    title: "TabTogether",
+    languages: "Swift",
+    description: "Bill splitting iOS app for any type of bill using intelligent OCR technology.",
+    url: "https://www.google.com/404",
+    github: "https://github.com/oliveirag/TabTogether",
+    image: "/images/TabTogether.png"
+  },
+  {
+    title: "Stacks",
+    languages: "TypeScript",
+    description: "Financial literacy platform that makes building wealth engaging and sustainable.",
+    url: "https://www.google.com/404",
+    github: "https://github.com/Sultanlodi/Hackathon25",
+    image: "/images/stacks.png"
+  },
+  {
+    title: "ClearView AI",
+    languages: "JavaScript, TypeScript, HTML, CSS",
+    description: "Web app that intelligently cleans and analyzes messy software inventory data.",
+    url: "https://www.google.com/404",
+    github: "https://github.com/ClearView-AI/ClearView-AI",
+    image: "/images/broom.png"
+  }
+];
+---
+
+<Layout title="gui's website">
+	<div class="max-w-5xl w-full p-3 sm:p-8">
+		<div class="flex flex-col justify-center">
+			<div class="flex justify-between mb-8">
+				<h1 class="typewriter text-3xl md:text-4xl lg:text-5xl mr-2 md:mr-0">guilherme oliveira</h1>
+				<Spotify />
+			</div>
+      <div class="grid grid-cols-1 md:grid-cols-5 gap-6 text-base sm:text-lg lg:px-2">
+        <div class="md:col-span-3 space-y-2 md:space-y-4">
+          <div id="about" class="motion-preset-slide-right-sm flex flex-col">
+            <span class="font-bold">about me</span>
+            <span>computer science @ <span class="text-yellow-400">ucf</span>.</span>
+            <span class="rainbow-letters">currently building something cool</span>
+            <!-- <a href="buymeacoffee.com/ronthekiehn" target="_blank" rel="noreferrer" class="hover:underline  text-yellow-200">buy me a coffee</a> -->
+          </div>
+          <div class="motion-preset-slide-right-sm my-2 relative divider h-[2px] w-[550px] bg-zinc-600">
+            <div class="absolute inset-0 bg-gradient-radial z-10"></div>
+          </div>
+          <div id="contact" class="flex flex-col motion-preset-slide-right-sm motion-delay-75">
+            <span class="font-bold">contact me</span>
+            <span class="pointer-events-none"><span class="pointer-events-auto select-text">goliveiracoll@gmail.com</span></span>
+            <span>or on
+              <a href="https://github.com/oliveirag" target="_blank" rel="noreferrer" class="text-gray-400 hover:underline">github</a>,
+              <a href="https://www.linkedin.com/in/notgui/" target="_blank" rel="noreferrer" class="text-blue-500 hover:underline">linkedin</a>, 
+              <a href="https://x.com/guiwastaken" target="_blank" rel="noreferrer" class="text-blue-300 hover:underline">twitter</a>,
+              <a href="https://www.instagram.com/notgui/" target="_blank" rel="noreferrer" class="text-orange-500 hover:underline">instagram</a>.
+            </span>
+          </div>
+          <div class="my-2 relative divider h-[2px] w-[550px] bg-zinc-600 motion-preset-slide-right-sm motion-delay-75">
+            <div class="absolute inset-0 bg-gradient-radial z-10"></div>
+          </div>
+          <div id="tech-stack" class="flex flex-col motion-preset-slide-right-sm motion-delay-150">
+            <span class="font-bold">tech stack</span>
+            <span><span class="text-blue-400">python</span>, <span class="text-orange-300">c</span>, <span class="text-red-500">java</span>, and <span class="text-yellow-300">javascript</span>/<span class="text-blue-300">typescript</span></span>
+          </div>
+          <div class="my-2 relative divider h-[2px] w-[550px] bg-zinc-600 motion-preset-slide-right-sm motion-delay-100">
+            <div class="absolute inset-0 bg-gradient-radial z-10"></div>
+          </div>
+          <div id="about-site" class="flex flex-col motion-preset-slide-right-sm motion-delay-150">
+            <span class="font-bold">about this site</span>
+            <span>built with 
+              <span class="text-red-400">astro</span>,
+              <span class="text-blue-500">jquery</span>,
+              <span class="text-blue-100">react</span>, and
+              <span class="text-blue-300">tailwind</span>.
+            </span>
+            <a href="https://github.com/oliveirag/Website" target="_blank" rel="noreferrer" class="w-fit hover:underline">view the source code here</a>
+          </div>
+        </div>
+        <div class="md:col-span-2 flex flex-col justify-center items-center md:items-center md:pt-12">
+          <div class="motion-preset-slide-left-sm motion-delay-100 w-56 h-56 md:w-72 md:h-72 rounded-2xl overflow-hidden border-2 border-zinc-600 relative">
+            <div class="absolute inset-0 bg-gradient-radial opacity-20 z-10 pointer-events-none"></div>
+            <img 
+              src="/images/IMG_3907.JPG" 
+              alt="Guilherme Oliveira" 
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <a 
+            href="/GuilhermeResume.pdf" 
+            download="Guilherme_Oliveira_Resume.pdf"
+            class="mt-4 inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-zinc-600 bg-transparent hover:bg-zinc-800 hover:text-white h-10 px-4 py-2 text-zinc-200 hover:border-zinc-500 motion-preset-slide-left-sm motion-delay-150"
+          >
+            Download Resume
+          </a>
+        </div>
+      </div>
+    		
+
+		</div>
+    <div id="switcher" class="relative rounded-full h-[46px] max-w-[22rem] mx-auto bg-zinc-600 flex justify-center items-center mt-8 mb-4 motion-preset-fade-lg motion-delay-[350ms]">
+      <div class="absolute inset-0 bg-gradient-radial z-0 rounded-full"></div>
+      <div class="relative m-[2px] bg-black w-full h-[42px] rounded-full z-10 flex justify-between items-center">
+        <div id="slider" class="absolute bg-zinc-600 h-[42px] w-1/3 rounded-full transition-all duration-200 ease-in-out">
+          <div class="absolute inset-0 bg-gradient-radial opacity-20 z-10 rounded-full"></div>
+        </div>
+        <button id="projects-btn" class="hover:underline relative h-full w-full px-2 text-white rounded-full transition-colors z-20 ">Projects</button>
+        <button id="chatbot-btn" class="hover:underline relative h-full w-full px-2 text-white rounded-full transition-colors z-20 ">Chatbot</button>
+        <button id="bookshelf-btn" class="hover:underline relative h-full w-full px-2 text-white rounded-full transition-colors z-20">Top 5</button>
+      </div>
+    </div>
+
+    <div id="content-container" class="relative">
+      <div id="modal-fade" class="z-50 pointer-events-none absolute inset-0 bg-neutral-900 motion-opacity-out-0 motion-duration-[800ms] motion-delay-[350ms]"></div>
+      <div id="projects" class="flex flex-col gap-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-4">
+          {mainProjects.map(project => (
+            <Project {...project} />
+          ))}
+        </div>
+        <div id="git-commits" class="mt-8 px-8 flex flex-col gap-4">
+          <div class="font-bold text-zinc-300 text-sm mt-2 mx-auto">Loading commit data...</div>
+        </div>
+      </div>
+      <div id="chatbot" class="hidden relative mx-auto inset-0 bg-zinc-600 rounded-[12px] max-w-4xl h-[75vh]">
+        <div class="absolute inset-0 bg-gradient-radial rounded-[12px] z-0"></div>
+        <div class="relative m-[2px] top-[2px] bg-black rounded-[10.5px] z-10 h-[calc(75vh-4px)]">
+          <ChatBot client:load />
+        </div>
+      </div>
+      <div id="bookshelf" class="hidden relative p-4 2xl:p-8 w-screen ml-[-50vw] left-[50%] justify-center">
+        <div class="max-w-4xl mx-auto pb-4 flex-col flex gap-10 ">
+         <Other />
+        </div>
+      </div>
+    </div>
+</Layout>
+
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6LCTQSHDRD"></script>
+<script is:inline>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-6LCTQSHDRD');
+</script>
+
+<script>
+    import { initializeHover } from '../scripts/hover.js';
+    initializeHover('.divider');
+    initializeHover('#chatbot');
+    initializeHover('#switcher');
+    initializeHover('#slider');
+
+   
+    import $ from 'jquery';
+
+    function switchTab(position: string, tabId: string) {
+        $('#slider').css('left', position);
+        $('#projects, #chatbot, #bookshelf').addClass('hidden');
+        $(tabId).removeClass('hidden');
+        
+        // Update button colors
+        $('#projects-btn, #chatbot-btn, #bookshelf-btn').removeClass('text-white').addClass('text-zinc-300');
+        if (tabId === '#projects') {
+          $('#projects-btn').removeClass('text-zinc-300').addClass('text-white');
+        } else if (tabId === '#chatbot') {
+          $('#chatbot-btn').removeClass('text-zinc-300').addClass('text-white');
+        } else if (tabId === '#bookshelf') {
+          $('#bookshelf-btn').removeClass('text-zinc-300').addClass('text-white');
+        }
+      }
+
+    function handleHash() {
+        const hash = window.location.hash;
+
+        if (hash === '#bookshelf' || hash === '#other') {
+            switchTab('66.66%', '#bookshelf');
+        } else if (hash === '#chatbot') {
+            switchTab('33.33%', '#chatbot');
+        } else if (hash && hash.length > 1 && $(hash).length > 0 && $(hash).closest('#bookshelf').length > 0) {
+            switchTab('66.66%', '#bookshelf');
+            setTimeout(() => {
+                const element = document.getElementById(hash.substring(1));
+                if (element) {
+                    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            }, 100);
+        } else {
+            switchTab('0', '#projects');
+        }
+    }
+
+    
+    $(function() {
+      $('#projects-btn').on('click', function() {
+        switchTab('0', '#projects');
+      });
+
+      $('#chatbot-btn').on('click', function() {
+        switchTab('33.33%', '#chatbot');
+      });
+
+      $('#bookshelf-btn').on('click', function() {
+        switchTab('66.66%', '#bookshelf');
+      });
+
+      handleHash();
+      $(window).on('hashchange', handleHash);
+      
+      // Set initial button colors
+      $('#chatbot-btn, #bookshelf-btn').removeClass('text-white').addClass('text-zinc-300');
+
+
+      // Fetch GitHub Contributions
+      $.getJSON('https://my-website-spotify-api.vercel.app/api/github-contributions', function(data) {
+        const $commitsGrid = $('#git-commits');
+        $commitsGrid.empty();
+
+        if (data && data.totalCommits > 0) {
+          $commitsGrid.append(
+            `<span class="font-bold text-zinc-300 text-sm mt-2 mx-auto">${data.totalCommits} commits in ${data.year}</span>`
+          );
+
+          // Add repository details
+          if (data.repositories && data.repositories.length > 0) {
+            const $repoList = $('<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"></div>');
+            
+            data.repositories.forEach((repo, index) => {
+              const rankColors = ['text-amber-400', 'text-zinc-200', 'text-amber-600'];
+              const bgColors = ['bg-amber-400/5', 'bg-zinc-200/5', 'bg-amber-600/5'];
+              const bgClass = index < 3 ? `${bgColors[index]} p-2` : '';
+              const rank = index < 3 ? `<span class="${rankColors[index]}">#${index + 1}</span> ` : '';
+              const $repoCard = $(`
+                <div class="flex flex-col items-center text-center ${bgClass}">
+                  <div class="flex items-center gap-2 mb-1">
+                    <span class="font-bold">${rank}${repo.name}</span>
+                  </div>
+                  <span class="inline-block text-xs text-zinc-300">${repo.language} • ${repo.commits} commits</span>
+                </div>
+              `);
+              $repoList.append($repoCard);
+            });
+            
+            $commitsGrid.append($repoList);
+          }
+        } else {
+          $commitsGrid.html('<div class="text-center text-zinc-400">No contribution data found.</div>');
+        }
+      }).fail(function() {
+        $('#git-commits').html('<div class="text-center text-red-500">Error loading git commits</div>');
+      });
+    });
+  </script>
+
+  <style>
+    @media (min-width: 768px) {
+      .typewriter {
+    --motion-duration: 2000ms;
+    animation: 
+      typing var(--motion-duration) steps(18) forwards,
+      cursor-blink 0.4s step-end infinite;
+    white-space: nowrap;
+    border-right: 2px solid;
+    overflow: hidden;
+    width: 18ch;
+    border-right-color: transparent;
+  }
+    }
+
+@keyframes typing {
+  0%, 10% { 
+    width: 0;
+  }
+  90%, 100% { 
+    width: 18ch;
+  }
+}
+
+@keyframes cursor-blink {
+  0%, 100% { border-right-color: currentColor }
+  50% { border-right-color: transparent }
+}
+
+.typewriter {
+  animation-iteration-count: 1, 5;  /* Type once, blink 5 times */
+}
+  </style>
+
+<style is:global>
+.rainbow-letters {
+  background: linear-gradient(
+    90deg,
+    #fbbf24,
+    #ec4899,
+    #8b5cf6,
+    #06b6d4,
+    #10b981,
+    #fbbf24
+  );
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient-flow 2s linear infinite;
+}
+
+@keyframes gradient-flow {
+  0%, 100% {
+    background-position: 0% center;
+  }
+  50% {
+    background-position: 100% center;
+  }
+}
+</style>

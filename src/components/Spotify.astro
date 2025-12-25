@@ -1,0 +1,54 @@
+---
+import '../styles/hover.css';
+import SpotifyIcon from '../icons/SpotifyIcon.astro';
+---
+
+<div class="h-[52px] relative spotify-hover rounded-[16px] w-1/2 md:w-64 bg-zinc-600">
+    <div class="h-[52px] absolute inset-0 bg-gradient-radial z-0 rounded-[16px]"></div>
+    <div class="relative md:mx-auto md:w-[251px] h-[48px] m-[2px] bg-black rounded-[14.5px] p-2 z-10 flex items-center">
+        <SpotifyIcon />
+        <div id="loading" class="my-auto">Loading...</div>
+        <div id="spotify-content" class="flex items-center flex-1 min-w-0">
+            <div id="offline" class="hidden my-auto">
+                Currently offline
+            </div>
+            <div id="song" class="text-xs w-full">
+                <strong id="song-title" class="block truncate"></strong>
+                <p id="song-artist" class="block truncate"></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+  import { initializeHover } from '../scripts/hover.js';
+  import $ from 'jquery';
+
+  $(document).ready(function() {
+    // Initialize hover effect
+    initializeHover('.spotify-hover');
+    
+    const fetchNowPlaying = () => {
+      $.getJSON('https://my-website-spotify-api.vercel.app/api/spotify', function(data) {
+        $('#loading').hide();
+        $('#spotify-content').show();
+
+        if (data) {
+          $('#offline').hide();
+          $('#song').show();
+          $('#song-title').text(data.title);
+          $('#song-artist').text(data.artist);
+        } else {
+          $('#song').hide();
+          $('#offline').show();
+        }
+      }).fail(function() {
+        console.error('Error fetching now playing data');
+      });
+    };
+
+    // Initial fetch and set interval
+    fetchNowPlaying();
+    setInterval(fetchNowPlaying, 10000);
+  });
+</script>
